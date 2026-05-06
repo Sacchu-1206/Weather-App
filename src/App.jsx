@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getWeatherByCity } from "./services/weatherService";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
   const [city, setCity] = useState("");
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>WeatherX Pro</h1>
+      <h1>Weather App</h1>
 
       <input
         type="text"
@@ -27,13 +28,7 @@ function App() {
 
       <button onClick={handleSearch}>Search</button>
 
-      {weather && (
-        <div>
-          <h2>{weather.name}</h2>
-          <p>Temp: {weather.main.temp}°C</p>
-          <p>Condition: {weather.weather[0].main}</p>
-        </div>
-      )}
+    <WeatherCard weather={weather} />
     </div>
   );
 }
