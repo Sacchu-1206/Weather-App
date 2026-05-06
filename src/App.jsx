@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { getWeatherByCity } from "./services/weatherService";
-import WeatherCard from "./components/WeatherCard";
-
+import WeatherCard from "./components/weather/WeatherCard";
+import SearchBar from "./components/weather/SearchBar";
 function App() {
-  const [city, setCity] = useState("");
+  
   const [weather, setWeather] = useState(null);
 
-  const handleSearch = async () => {
+  const handleSearch = async (city) => {
     try {
       const data = await getWeatherByCity(city);
       setWeather(data);
@@ -19,14 +19,7 @@ function App() {
     <div style={{ padding: "20px" }}>
       <h1>Weather App</h1>
 
-      <input
-        type="text"
-        placeholder="Enter city"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-
-      <button onClick={handleSearch}>Search</button>
+     <SearchBar onSearch={handleSearch} />
 
     <WeatherCard weather={weather} />
     </div>
