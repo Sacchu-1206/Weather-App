@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
 
-  // Input value store karega
+  // Input value store 
   const [city, setCity] = useState("");
 
   // Search button click function

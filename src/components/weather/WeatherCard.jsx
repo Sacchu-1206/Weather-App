@@ -1,6 +1,5 @@
 const WeatherCard = ({ weather }) => {
 
-  // Agar weather data nahi hai to kuch show mat karo
   if (!weather) return null;
 
   return (
