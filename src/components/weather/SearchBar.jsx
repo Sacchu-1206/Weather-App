@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiColor } from "react-icons/bi";
 
 const SearchBar = ({ onSearch }) => {
 
@@ -69,7 +70,8 @@ const styles = {
     padding: "12px 20px",
     border: "none",
     borderRadius: "10px",
-    background: "#ffffff",
+  
+    background: "red",
     cursor: "pointer",
     fontWeight: "bold",
   },
