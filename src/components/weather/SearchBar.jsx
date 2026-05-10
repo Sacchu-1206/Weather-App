@@ -50,29 +50,32 @@ export default SearchBar;
 // Inline styles
 const styles = {
 
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "10px",
-    marginTop: "40px",
-  },
+ container: {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "15px",
+  marginTop: "40px",
+  flexWrap: "wrap",
+},
 
-  input: {
-    width: "250px",
-    padding: "12px",
-    borderRadius: "10px",
-    border: "none",
-    outline: "none",
-    fontSize: "16px",
-  },
-
-  button: {
-    padding: "12px 20px",
-    border: "none",
-    borderRadius: "10px",
-  
-    background: "red",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
+ input: {
+  width: "320px",
+  padding: "14px 18px",
+  borderRadius: "14px",
+  border: "none",
+  outline: "none",
+  fontSize: "17px",
+  background: "#2f2f2f",
+  color: "white",
+},
+button: {
+  padding: "14px 24px",
+  border: "none",
+  borderRadius: "14px",
+  background: "red",
+  cursor: "pointer",
+  fontWeight: "bold",
+  fontSize: "16px",
+},
 };
