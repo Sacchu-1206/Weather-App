@@ -21,3 +21,25 @@ export const getWeatherByCity = async (city) => {
     throw error;
   }
 };
+
+export const getWeatherByCoords = async (lat, lon) => {
+
+  try {
+
+    const response = await axios.get(BASE_URL, {
+      params: {
+        lat,
+        lon,
+        appid: import.meta.env.VITE_WEATHER_API_KEY,
+        units: "metric",
+      },
+    });
+
+    return response.data;
+
+  } catch (error) {
+
+    console.log("Location weather error:", error);
+    throw error;
+  }
+};

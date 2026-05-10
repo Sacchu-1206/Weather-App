@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { getWeatherByCity } from "./services/weatherService";
+import { useState,useEffect } from "react";
+import { getWeatherByCity,  getWeatherByCoords } from "./services/weatherService";
 import WeatherCard from "./components/weather/WeatherCard";
 import SearchBar from "./components/weather/SearchBar";
 function App() {
@@ -35,6 +35,39 @@ function App() {
   }
 };
 
+const getCurrentLocationWeather = () => {
+
+  navigator.geolocation.getCurrentPosition(
+
+    async (position) => {
+
+      try {
+
+        setLoading(true);
+
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        const data = await getWeatherByCoords(lat, lon);
+
+        setWeather(data);
+
+      } catch (error) {
+
+        setError("Unable to fetch location weather");
+
+      } finally {
+
+        setLoading(false);
+      }
+    },
+
+    () => {
+      setError("Location access denied");
+    }
+  );
+};
+
 const getBackground = () => {
 
   if (!weather) {
@@ -65,6 +98,11 @@ const getBackground = () => {
   }
 };
 
+useEffect(() => {
+
+  getCurrentLocationWeather();
+
+}, []);
 const styles = {
 
   app: {
