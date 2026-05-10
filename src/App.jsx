@@ -31,6 +31,8 @@ setForecast(forecastData);
 
     setWeather(data);
 
+    localStorage.setItem("lastCity", city);
+
   } catch (error) {
 
     setError("City not found");
@@ -57,11 +59,18 @@ const getCurrentLocationWeather = () => {
 
         const data = await getWeatherByCoords(lat, lon);
 
+        const forecastData =
+  await getForecastByCity(data.name);
+
+setForecast(forecastData);
+
         setWeather(data);
+
+        localStorage.setItem("lastCity", data.name);
 
       } catch (error) {
 
-        setError("Unable to fetch location weather");
+       setError("Location weather unavailable");
 
       } finally {
 
@@ -73,6 +82,36 @@ const getCurrentLocationWeather = () => {
       setError("Location access denied");
     }
   );
+};
+
+const loadLastCityWeather = async () => {
+
+  const savedCity =
+    localStorage.getItem("lastCity");
+
+  if (!savedCity) return;
+
+  try {
+
+    setLoading(true);
+
+    const data =
+      await getWeatherByCity(savedCity);
+
+    const forecastData =
+      await getForecastByCity(savedCity);
+
+    setWeather(data);
+    setForecast(forecastData);
+
+  } catch (error) {
+
+    console.log("Saved city error:", error);
+
+  } finally {
+
+    setLoading(false);
+  }
 };
 
 const getBackground = () => {
@@ -107,9 +146,21 @@ const getBackground = () => {
 
 useEffect(() => {
 
-  getCurrentLocationWeather();
+  const savedCity =
+    localStorage.getItem("lastCity");
+
+  if (savedCity) {
+
+    loadLastCityWeather();
+
+  } else {
+
+    getCurrentLocationWeather();
+  }
 
 }, []);
+
+
 const styles = {
 
   app: {
