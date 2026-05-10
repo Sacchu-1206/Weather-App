@@ -71,6 +71,7 @@ const styles = {
   backdropFilter: "blur(12px)",
   textAlign: "center",
   boxShadow: "0 8px 30px rgba(0,0,0,0.25)",
+  animation: "fadeIn 0.5s ease",
 },
 
 

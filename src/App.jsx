@@ -3,6 +3,7 @@ import { getWeatherByCity,  getWeatherByCoords, getForecastByCity, } from "./ser
 import WeatherCard from "./components/weather/WeatherCard";
 import SearchBar from "./components/weather/SearchBar";
 import Forecast from "./components/weather/Forecast";
+import Loader from "./components/common/Loader";
 function App() {
   
   const [weather, setWeather] = useState(null);
@@ -177,7 +178,8 @@ const styles = {
 
      <SearchBar onSearch={handleSearch} />
 
-     {loading && <h2>Loading...</h2>}
+     {loading && <Loader />}
+     
      {error && <p style={{ color: "yellow" }}>{error}</p>}
      
     <WeatherCard weather={weather} />
