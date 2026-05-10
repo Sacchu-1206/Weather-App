@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react";
-import { getWeatherByCity,  getWeatherByCoords } from "./services/weatherService";
+import { getWeatherByCity,  getWeatherByCoords, getForecastByCity, } from "./services/weatherService";
 import WeatherCard from "./components/weather/WeatherCard";
 import SearchBar from "./components/weather/SearchBar";
+import Forecast from "./components/weather/Forecast";
 function App() {
   
   const [weather, setWeather] = useState(null);
@@ -9,6 +10,8 @@ function App() {
   const [loading, setLoading] = useState(false);
 
    const [error, setError] = useState("");
+
+   const [forecast, setForecast] = useState(null);
 
  const handleSearch = async (city) => {
 
@@ -21,6 +24,10 @@ function App() {
     setError("");
 
     const data = await getWeatherByCity(city);
+
+    const forecastData = await getForecastByCity(city);
+
+setForecast(forecastData);
 
     setWeather(data);
 
@@ -124,6 +131,7 @@ const styles = {
      
     <WeatherCard weather={weather} />
 
+    <Forecast forecast={forecast} />
     </div>
   );
 }
