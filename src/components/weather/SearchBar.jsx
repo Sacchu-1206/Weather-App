@@ -59,23 +59,26 @@ const styles = {
   flexWrap: "wrap",
 },
 
- input: {
+input: {
   width: "320px",
-  padding: "14px 18px",
+  padding: "15px 20px",
   borderRadius: "14px",
-  border: "none",
+  border: "1px solid rgba(255,255,255,0.2)",
   outline: "none",
   fontSize: "17px",
-  background: "#2f2f2f",
+  background: "rgba(0,0,0,0.25)",
   color: "white",
+  backdropFilter: "blur(10px)",
 },
 button: {
-  padding: "14px 24px",
+  padding: "14px 26px",
   border: "none",
   borderRadius: "14px",
-  background: "red",
+  background: "#ff4b2b",
+  color: "white",
   cursor: "pointer",
   fontWeight: "bold",
   fontSize: "16px",
+  transition: "0.3s ease",
 },
 };

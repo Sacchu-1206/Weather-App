@@ -63,26 +63,25 @@ export default WeatherCard;
 const styles = {
 
   card: {
-  width: "350px",
+  width: "360px",
   margin: "40px auto",
-  padding: "30px",
-  borderRadius: "24px",
-  background: "rgba(255, 255, 255, 0.12)",
-  backdropFilter: "blur(12px)",
+  padding: "35px",
+  borderRadius: "28px",
+  background: "rgba(255, 255, 255, 0.15)",
+  backdropFilter: "blur(18px)",
+  border: "1px solid rgba(255,255,255,0.2)",
   textAlign: "center",
-  boxShadow: "0 8px 30px rgba(0,0,0,0.25)",
+  boxShadow: "0 10px 35px rgba(0,0,0,0.25)",
   animation: "fadeIn 0.5s ease",
+  transition: "0.3s ease",
 },
 
-
-
-  city: {
-  fontSize: "32px",
-  fontWeight: "bold",
-  padding:"10px",
-  marginBottom: "20px",
+ city: {
+  fontSize: "38px",
+  fontWeight: "700",
+  marginBottom: "15px",
+  letterSpacing: "1px",
 },
-
    icon: {
   fontSize: "80px",
   padding:"10px",
@@ -90,16 +89,17 @@ const styles = {
 },
 
  temp: {
-  fontSize: "60px",
+  fontSize: "72px",
   fontWeight: "bold",
-  padding:"10px",
+   padding:"10px",
   margin: "15px 0",
 },
 
-  condition: {
-    fontSize: "40px",
-    marginBottom: "20px",
-  },
+ condition: {
+  fontSize: "26px",
+  marginBottom: "25px",
+  fontWeight: "500",
+},
 
   extraInfo: {
     fontSize: "15px",

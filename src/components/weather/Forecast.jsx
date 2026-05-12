@@ -39,23 +39,25 @@ export default Forecast;
 
 const styles = {
 
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "15px",
-    flexWrap: "wrap",
-    marginTop: "30px",
-  },
+ container: {
+  display: "flex",
+  justifyContent: "center",
+  gap: "20px",
+  flexWrap: "wrap",
+  marginTop: "35px",
+},
 
-  card: {
-    width: "140px",
-    padding: "15px",
-    borderRadius: "18px",
-    background: "rgba(255,255,255,0.12)",
-    textAlign: "center",
-    backdropFilter: "blur(10px)",
-  },
-
+ card: {
+  width: "150px",
+  padding: "20px",
+  borderRadius: "22px",
+  background: "rgba(255,255,255,0.15)",
+  textAlign: "center",
+  backdropFilter: "blur(12px)",
+  border: "1px solid rgba(255,255,255,0.15)",
+  boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+  transition: "0.3s ease",
+},
   temp: {
     fontSize: "24px",
     fontWeight: "bold",
