@@ -8,8 +8,6 @@ A modern and responsive Weather Application built with **React.js** that provide
 
 🌐 https://weather-app-gamma-dusky-95.vercel.app
     
-
-
 ---
 
 ## 📂 GitHub Repository
@@ -91,7 +89,7 @@ npm run dev
 Create a `.env` file and add:
 
 ```env
-VITE_WEATHER_API_KEY = VITE_WEATHER_API_KEY=YOUR_API_KEY
+VITE_WEATHER_API_KEY = YOUR_API_KEY
 ```
 
 ---
